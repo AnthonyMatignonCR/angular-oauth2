@@ -24,4 +24,13 @@ export class AppComponent {
   login(): void {
     this.oauthService.initLoginFlow();
   }
+
+  refresh(): void {
+    this.oauthService.refreshToken();
+  }
+
+  downloadImage(): void {
+    fetch('').then(res => res.blob()).then(blob => console.log(blob))
+    fetch('http://192.168.1.48/poc-synchro/medias/D00023-01.jpg').then(res => res.blob()).then(blob => console.log(blob));
+  }
 }
